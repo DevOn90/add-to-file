@@ -18,6 +18,9 @@
 - Identify the files expected to change.
 
 ## 3. Implementation
+- The implementation plan should indentify the exact tasks to be performed, the order in which they will be executed, and the expected changes to the codebase.
+- Dont implement all tasks at once; focus on one small, manageable change at a time.
+- Review and test each change before moving on to the next task.
 - Make small, focused changes.
 - Follow the existing project conventions.
 - Keep functions focused on a clear responsibility.
@@ -94,3 +97,88 @@ Summarize:
   commands and their actual results, and anything required by §7.
 - If context is insufficient, inspect the relevant files
   or ask for clarification rather than guessing.
+
+## 9. SPEC.md requirements
+
+Every project must have a `SPEC.md` containing the following
+sections unless the developer explicitly waives a section.
+
+Do not omit, combine, or replace a required section merely because
+you consider it unnecessary. Only the developer can waive a section.
+
+### Required sections
+
+1. **Purpose**
+   - What we are building.
+   - Who will use it.
+   - What problem it solves.
+
+2. **Scope**
+   - What is included.
+   - What is explicitly excluded.
+
+3. **Requirements and Acceptance Criteria**
+   - Expected behavior.
+   - How we determine that each requirement is satisfied.
+
+4. **Inputs, Outputs, and Errors**
+   - Inputs the program accepts.
+   - Expected outputs and observable side effects.
+   - Expected error behavior and relevant edge cases.
+
+5. **Constraints and Limitations**
+   - Important restrictions, assumptions, and known limitations.
+
+6. **Program Flow and Component Relationships**
+   - Where program execution starts.
+   - The main logical steps in execution order.
+   - The responsibilities of the main functions or modules.
+   - Which components call or depend on other components.
+   - How data moves between components.
+   - Where important decisions and error handling occur.
+
+### Rules for creating and maintaining SPEC.md
+
+- Work with the developer to develop and validate the specification.
+  Do not invent requirements or silently make significant assumptions.
+- If information is missing and materially affects requirements,
+  ask the developer rather than deciding on their behalf.
+- If a required section is incomplete, identify what is missing.
+  A section may explicitly state that something is undecided,
+  not applicable, or intentionally out of scope, where appropriate.
+- If you believe a section should be omitted, explain why and ask
+  the developer for explicit permission. Do not omit it while waiting
+  for a response.
+- A waiver applies only to the section explicitly identified by
+  the developer. Do not interpret it as permission to omit other
+  sections.
+- Keep SPEC.md concise. Do not add unnecessary documentation or
+  duplicate information without a clear reason.
+
+### Program Flow and Component Relationships
+
+- Include the program's logical flow and the relationships between
+  its main components. This section is mandatory unless explicitly
+  waived by the developer.
+- Keep the level of detail proportional to the project's complexity.
+- Describe the intended logical flow before implementation when
+  enough information is available. Do not invent function names,
+  modules, or implementation details that have not been decided.
+- When the design or implementation becomes clearer, update the
+  section to reflect the agreed-upon structure.
+- Explain the entry point, main execution steps, component
+  responsibilities, dependencies, and data flow as appropriate.
+- Use Mermaid diagrams when they materially improve understanding.
+  Do not add diagrams merely for decoration.
+- Ensure that the description remains consistent with the agreed
+  requirements and the actual implementation.
+- If implementation reveals a necessary change to the agreed design,
+  explain the discrepancy and seek developer input when the change
+  affects requirements or an important design decision.
+
+### Additional sections
+
+- Additional sections may be proposed when they provide clear value.
+- Explain why an additional section is useful and obtain the
+  developer's approval before adding it.
+- Do not expand the specification with unnecessary sections.

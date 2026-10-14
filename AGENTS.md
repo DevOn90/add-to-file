@@ -80,8 +80,6 @@ Summarize:
 - Reuse established project conventions and decisions.
 - If an ambiguity would materially affect implementation, correctness,
   safety, or scope, stop and seek clarification before proceeding.
-  For minor ambiguities with an obviously reasonable interpretation,
-  proceed, and state the assumption in the final report.
 - Do not generate lengthy explanations unless requested.
 - Prefer concise plans that identify the proposed changes,
   relevant files, risks, and verification steps.
@@ -143,6 +141,23 @@ you consider it unnecessary. Only the developer can waive a section.
   Do not invent requirements or silently make significant assumptions.
 - If information is missing and materially affects requirements,
   ask the developer rather than deciding on their behalf.
+- Every behavioral statement in the specification must be traceable
+  and carry exactly one of these labels:
+  - **approved** — explicitly stated or confirmed by the developer.
+  - **derived** — a direct logical consequence of an approved
+    decision; the source decision must be cited (for example:
+    "no file is written on exit; derived from: in-memory storage").
+  - **proposed** — suggested by the AI but not yet approved.
+    Proposed items must be grouped in a clearly marked
+    "Open points / proposals" list and must not drive implementation
+    or tests until the developer approves them.
+- Error and edge-case behavior is a requirement. Any rule describing
+  how the program reacts to invalid input, missing or duplicate data,
+  or boundary conditions must be labeled and approved like any other
+  requirement. Never present "standard" or "obvious" error handling
+  as already-decided behavior.
+- When in doubt whether a behavior is a requirement or a minor
+  detail, treat it as a requirement and ask. 
 - If a required section is incomplete, identify what is missing.
   A section may explicitly state that something is undecided,
   not applicable, or intentionally out of scope, where appropriate.
